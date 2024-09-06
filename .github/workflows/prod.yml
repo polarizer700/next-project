@@ -22,7 +22,7 @@ jobs:
             source ~/.nvm/svm.sh
             node -v
             cd ~/next-project
-            git pull o main
+            git pull origin main
             yarn install
             yarn build
             kill -9 `lsof -t -i:80`
