@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import './assets/index.scss';
 import "./globals.css";
+import '@mantine/core/styles.css';
+import {Header} from "@/app/components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import {urbanistFonts} from "@/app/fonts";
+import React from "react";
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -10,13 +15,27 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+      <html lang="en"  className={`${urbanistFonts.variable}`}>
+      <head>
+          <meta charSet="utf-8" />
+          <meta
+              name="viewport"
+              content="minimum-scale=1, initial-scale=1, width=device-width"
+          />
+          <link rel="shortcut icon" href="/favicon.ico" />
+        <ColorSchemeScript />
+      </head>
+      <body>
+      <MantineProvider>
+          <Header />
+          {children}
+      </MantineProvider>
+      </body>
+      </html>
   );
 }

@@ -1,0 +1,17 @@
+.menuList {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+}
+
+@media (max-width: 1024px) {
+  .menuList {
+    display: none;
+  }
+}
+
+.menuListItem {
+  padding: 8px;
+  display: block;
+}

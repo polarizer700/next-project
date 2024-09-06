@@ -1,0 +1,8 @@
+.headerInside {
+    display: flex;
+    align-items: center;
+}
+.mlAuto {
+    margin-left: auto;
+    display: flex;
+}

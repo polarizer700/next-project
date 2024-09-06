@@ -1,0 +1,51 @@
+.btn {
+    font-size: 16px;
+    line-height: 25.6px;
+    display: inline-block;
+    height: 42px;
+    font-weight: 600;
+    padding: 8px 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s;
+}
+
+.btnOutline span {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-color: #fff;
+    background-image: linear-gradient(174.96deg, #384CFF -7.26%, #98A2FF 133.45%);
+}
+.btnOutline:hover:before {
+    background: #384CFF;
+    padding: 3px;
+}
+.btnOutline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px; /* Добавьте закругление, если нужно */
+    padding: 2px; /* Ширина рамки */
+    background: linear-gradient(174.96deg, #384CFF -7.26%, #98A2FF 133.45%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude; /* Поддержка рамки */
+    z-index: -1;
+    /*transition: 0.1s;*/
+}
+
+.btnGradient {
+    background: linear-gradient(174.96deg, #384CFF -7.26%, #98A2FF 133.45%);
+    color: #FFFFFF;
+    transition: background 0.5s ease;
+}
+.btnGradient:hover {
+    background: linear-gradient(279.29deg, #384CFF 19.94%, #98A2FF 92.39%);
+}
